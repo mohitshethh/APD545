@@ -1,0 +1,28 @@
+/**********************************************
+ Workshop #1
+ Course:APD545
+ Last Name: Sheth
+ First Name: Mohit
+ ID: 114498223
+ Section: ZAA
+ This assignment represents my own work in accordance with Seneca Academic Policy.
+ Signature
+ Date: 22nd Sep 2024
+**********************************************/
+
+By using MVC, the workshop solution became much more organized and maintainable:
+
+-> The Model represents the domain logic and data management of the application. In this workshop, the Model includes the classes for musical instruments, the interface IFixable, IPlayable, and abstract classes such as MusicalInstrument, StringFamily, PercussionFamily, and WoodwindFamily. Concrete classes like Drum, Flute, Guitar, Harp, and Xylophone represent specific types of instruments.
+
+-> The View is responsible for displaying the output to the user. In this case, the View component would handle tasks such as:
+
+	-Prompting the user to enter prices for the instruments.
+	-Displaying information such as how each instrument is played, its pitch, and repair instructions.
+
+-> The Controller serves as the intermediary between the Model and the View. It processes user input, interacts with the Model, and updates the View accordingly. In this workshop, the Controller would:
+
+	-Collect the input from the user (e.g., price of each instrument, family name).
+	-Create instances of the musical instrument objects using the data provided by the user and the hardcoded attributes.	
+
+
+Since responsibilities are clearly separated, it's easier to read and maintain the code. The Model focuses on data and business rules, the View is responsible for rendering, and the Controller manages interactions between them. This reduces confusion and keeps the logic clear and modular.

@@ -1,0 +1,17 @@
+/**********************************************
+ Workshop #3
+ Course: DSA545
+ Last Name: Sheth
+ First Name:Mohit
+ ID:114498223
+ Section: ZAA
+ This assignment represents my own work in accordance with Seneca Academic Policy.
+ Signature
+ Date:1/11/2024
+ **********************************************/
+
+The design of this car loan application is based on a multi-class structure that prioritizes modularity and scalability. By creating separate classes for different functionalities, I ensured a clear separation of responsibilities, making the code easier to maintain and extend. For instance, the Login Class is focused on user authentication, handling the verification of credentials and displaying messages based on the login result. The LoanCalculator Class manages the loan calculations, including monthly, weekly, and bi-weekly payments, by factoring in user inputs like loan amount, down payment, interest rate, and loan duration. To handle user information, the CustomerInfo Class manages and validates details such as name, phone, city, and province, ensuring required fields are completed before proceeding. Finally, the DataManager Class handles the in-app storage and retrieval of saved loan rates using a suitable data structure, which allows users to access saved rates during a session. This approach keeps each class focused on a single task, promoting maintainability and scalability.
+
+For storing saved loan rates, I chose an ArrayList to hold data temporarily during runtime. This data structure supports efficient access and retrieval of entries in the order they were saved, making it well-suited for displaying loan rates in a ListView. Compared to a HashMap, which offers fast access by key, the ArrayList is simpler and more intuitive for our use case since we only need sequential access to saved data. An ArrayList also makes it easy to display entries in the order they were created, which fits well with the UI requirements.
+
+In terms of the user interface, I used HBox and GridPane layouts to structure the form elements. The HBox layout organizes related fields like vehicle type and age horizontally, while the GridPane layout provides a flexible, grid-like arrangement for other elements like text fields, labels, and dropdowns. To improve interactivity, I added a Slider for the loan term, complete with a ChangeListener that dynamically updates the loan duration as users adjust it. Additionally, buttons provide essential functionality: the Calculate Button performs loan payment calculations and displays the result formatted as currency, while the Clear Button resets all fields. The Save Rates Button temporarily saves the current loan data, and the Show Saved Rates Button opens a new window to list saved entries. Selecting an item in this list loads the details back into the main application form, allowing users to reuse previous calculations easily.

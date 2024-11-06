@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox alignment="CENTER" minHeight="550.0" minWidth="500.0" spacing="10.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mohit.ws3.controller.CustomerDetailController">
+   <Label text="Enter Customer Details">
+      <font>
+         <Font name="System Bold" size="18.0" />
+      </font>
+      <VBox.margin>
+         <Insets bottom="30.0" />
+      </VBox.margin>
+   </Label>
+
+    <Label text="Name">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+    <TextField fx:id="nameField" promptText="Enter Name here">
+      <VBox.margin>
+         <Insets left="70.0" right="70.0" />
+      </VBox.margin></TextField>
+
+    <Label text="Phone Number">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+    <TextField fx:id="phoneField" promptText="Enter phone number">
+      <VBox.margin>
+         <Insets left="70.0" right="70.0" />
+      </VBox.margin></TextField>
+
+    <Label text="City:">
+      <font>
+         <Font size="14.0" />
+      </font></Label>
+    <TextField fx:id="cityField" promptText="Enter city">
+      <VBox.margin>
+         <Insets left="70.0" right="70.0" />
+      </VBox.margin></TextField>
+
+    <Label text="Province:" />
+    <ComboBox fx:id="provinceComboBox">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Ontario" />
+                <String fx:value="Quebec" />
+                <String fx:value="British Columbia" />
+                <String fx:value="Alberta" />
+                <!-- Add more provinces as needed -->
+            </FXCollections>
+        </items>
+    </ComboBox>
+
+    <Button onAction="#handleOkAction" text="OK">
+      <VBox.margin>
+         <Insets top="20.0" />
+      </VBox.margin></Button>
+</VBox>

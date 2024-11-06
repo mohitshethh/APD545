@@ -1,0 +1,418 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+
+<ScrollPane xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mohit.workshop2.controller.OrderController">
+   <content>
+      <BorderPane>
+          <top>
+              <Label text="APD's Pizzeria " BorderPane.alignment="CENTER">
+                  <font>
+                      <Font size="48.0" />
+                  </font>
+                  <BorderPane.margin>
+                      <Insets bottom="20.0" top="20.0" />
+                  </BorderPane.margin>
+              </Label>
+          </top>
+          <left>
+              <VBox prefHeight="200.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+                  <children>
+                      <Label alignment="CENTER" text="Make your own pizza" textAlignment="CENTER">
+                          <font>
+                              <Font name="System Bold" size="36.0" />
+                          </font>
+                          <opaqueInsets>
+                              <Insets />
+                          </opaqueInsets>
+                          <padding>
+                              <Insets left="30.0" top="10.0" />
+                          </padding>
+                      </Label>
+                      <Label text="Pizza Size :" textAlignment="CENTER">
+                          <font>
+                              <Font name="System Bold Italic" size="30.0" />
+                          </font>
+                          <padding>
+                              <Insets bottom="20.0" left="40.0" top="20.0" />
+                          </padding>
+                      </Label>
+                      <RadioButton fx:id="rbSmall" contentDisplay="CENTER" mnemonicParsing="false" text="Small">
+                          <font>
+                              <Font size="24.0" />
+                          </font>
+                          <padding>
+                              <Insets bottom="10.0" left="170.0" top="10.0" />
+                          </padding>
+                          <VBox.margin>
+                              <Insets />
+                          </VBox.margin>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="pizzaSizeGroup" />
+                     </toggleGroup>
+                      </RadioButton>
+                      <RadioButton fx:id="rbMedium" mnemonicParsing="false" text="Medium" toggleGroup="$pizzaSizeGroup">
+                          <font>
+                              <Font size="24.0" />
+                          </font>
+                          <padding>
+                              <Insets bottom="10.0" left="170.0" top="10.0" />
+                          </padding>
+                      </RadioButton>
+                      <RadioButton fx:id="rbLarge" contentDisplay="CENTER" mnemonicParsing="false" text="Large" toggleGroup="$pizzaSizeGroup">
+                          <font>
+                              <Font size="24.0" />
+                          </font>
+                          <padding>
+                              <Insets bottom="10.0" left="170.0" top="10.0" />
+                          </padding>
+                      </RadioButton>
+                      <RadioButton fx:id="rbExtraLarge" mnemonicParsing="false" text="Extra Large" toggleGroup="$pizzaSizeGroup">
+                          <font>
+                              <Font size="24.0" />
+                          </font>
+                          <padding>
+                              <Insets bottom="10.0" left="170.0" top="10.0" />
+                          </padding>
+                      </RadioButton>
+                      <Label layoutX="10.0" layoutY="64.0" text="Crust Type :" textAlignment="CENTER">
+                          <font>
+                              <Font name="System Bold Italic" size="30.0" />
+                          </font>
+                          <padding>
+                              <Insets bottom="20.0" left="40.0" top="20.0" />
+                          </padding>
+                      </Label>
+                      <RadioButton fx:id="rbNormal" contentDisplay="CENTER" layoutX="10.0" layoutY="141.0" mnemonicParsing="false" text="Normal">
+                          <font>
+                              <Font size="24.0" />
+                          </font>
+                          <padding>
+                              <Insets bottom="10.0" left="170.0" top="10.0" />
+                          </padding>
+                          <toggleGroup>
+                              <ToggleGroup fx:id="crustTypeGroup" />
+                          </toggleGroup>
+                      </RadioButton>
+                      <RadioButton fx:id="rbThin" layoutX="10.0" layoutY="193.0" mnemonicParsing="false" text="Thin" toggleGroup="$crustTypeGroup">
+                          <font>
+                              <Font size="24.0" />
+                          </font>
+                          <padding>
+                              <Insets bottom="10.0" left="170.0" top="10.0" />
+                          </padding>
+                      </RadioButton>
+                      <RadioButton fx:id="rbDeepDish" contentDisplay="CENTER" layoutX="10.0" layoutY="245.0" mnemonicParsing="false" text="Deep Dish" toggleGroup="$crustTypeGroup">
+                          <font>
+                              <Font size="24.0" />
+                          </font>
+                          <padding>
+                              <Insets bottom="10.0" left="170.0" top="10.0" />
+                          </padding>
+                      </RadioButton>
+                      <Label layoutX="10.0" layoutY="349.0" text="Select Your Toppings:" textAlignment="CENTER">
+                          <font>
+                              <Font name="System Bold Italic" size="30.0" />
+                          </font>
+                          <padding>
+                              <Insets bottom="20.0" left="40.0" top="20.0" />
+                          </padding>
+                      </Label>
+                      <GridPane minHeight="700.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                          <children>
+                              <CheckBox fx:id="cdPineapple" mnemonicParsing="false" text="Pineapple" GridPane.rowIndex="1">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbExtraCheese" mnemonicParsing="false" text="Extra Cheese" GridPane.rowIndex="2">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <Label text="(Add topping for $1.10 each)">
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                                  <padding>
+                                      <Insets left="40.0" />
+                                  </padding>
+                              </Label>
+                              <Label text="(Add meat for $2.15 each)" GridPane.columnIndex="1">
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                                  <padding>
+                                      <Insets left="40.0" />
+                                  </padding>
+                              </Label>
+                              <CheckBox fx:id="cbDriedShrimps" mnemonicParsing="false" text="Dried Shrimps" GridPane.rowIndex="3">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbMushrooms" mnemonicParsing="false" text="Mushrooms" GridPane.rowIndex="4">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbAnchovies" mnemonicParsing="false" text="Anchovies" GridPane.rowIndex="5">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbSunDriedTomatoes" mnemonicParsing="false" text="Sun Dried Tomatoes" GridPane.rowIndex="6">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbDacon" mnemonicParsing="false" text="Dacon" GridPane.rowIndex="7">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbSpinach" mnemonicParsing="false" text="Spinach" GridPane.rowIndex="8">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbRoastedGarlic" mnemonicParsing="false" text="Roasted Garlic" GridPane.rowIndex="9">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbJalapeno" mnemonicParsing="false" text="Jalapeno" GridPane.rowIndex="10">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbGroundBeef" mnemonicParsing="false" text="Ground Beef" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbShreddedChicken" mnemonicParsing="false" text="Shredded Chicken" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbGrilledChicken" mnemonicParsing="false" text="Grilled Chicken" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbPepperoni" mnemonicParsing="false" text="Pepperoni" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbHam" mnemonicParsing="false" text="Ham" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                              <CheckBox fx:id="cbBacon" mnemonicParsing="false" text="Bacon" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                                  <padding>
+                                      <Insets bottom="10.0" left="120.0" top="10.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </CheckBox>
+                          </children>
+                          <padding>
+                              <Insets left="50.0" />
+                          </padding>
+                      </GridPane>
+                      <Label alignment="CENTER" layoutX="10.0" layoutY="10.0" text="Enter your Details" textAlignment="CENTER">
+                          <font>
+                              <Font name="System Bold" size="36.0" />
+                          </font>
+                          <opaqueInsets>
+                              <Insets />
+                          </opaqueInsets>
+                          <padding>
+                              <Insets left="30.0" top="10.0" />
+                          </padding>
+                      </Label>
+                      <GridPane layoutX="10.0" layoutY="659.0" minHeight="170.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                          <children>
+                              <Label text="Name">
+                                  <padding>
+                                      <Insets left="120.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </Label>
+                              <Label text="Phone Number" GridPane.rowIndex="1">
+                                  <padding>
+                                      <Insets left="120.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </Label>
+                              <Label text="Pizza Quantity" GridPane.rowIndex="2">
+                                  <padding>
+                                      <Insets left="120.0" />
+                                  </padding>
+                                  <font>
+                                      <Font size="24.0" />
+                                  </font>
+                              </Label>
+                              <Spinner fx:id="spinnerQuantity" maxWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                                  <GridPane.margin>
+                                      <Insets />
+                                  </GridPane.margin>
+                              </Spinner>
+                              <TextField fx:id="tfPhone" maxWidth="300.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                              <TextField fx:id="tfCustomer" maxWidth="300.0" GridPane.columnIndex="1" />
+                          </children>
+                          <padding>
+                              <Insets left="50.0" top="20.0" />
+                          </padding>
+                          <VBox.margin>
+                              <Insets />
+                          </VBox.margin>
+                      </GridPane>
+                  </children>
+                  <opaqueInsets>
+                      <Insets />
+                  </opaqueInsets>
+              </VBox>
+          </left>
+          <bottom>
+              <HBox prefHeight="100.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+                  <children>
+                      <Button mnemonicParsing="false" onAction="#btnClear" text="Clear">
+                          <font>
+                              <Font size="24.0" />
+                          </font>
+                          <HBox.margin>
+                              <Insets bottom="20.0" left="50.0" right="510.0" top="20.0" />
+                          </HBox.margin>
+                      </Button>
+                      <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#btnPlaceOrder" text="Place Order">
+                          <font>
+                              <Font size="24.0" />
+                          </font>
+                          <HBox.margin>
+                              <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+                          </HBox.margin>
+                      </Button>
+                      <Button contentDisplay="RIGHT" mnemonicParsing="false" onAction="#btnOrderSummary" text="Order Summary">
+                          <font>
+                              <Font size="24.0" />
+                          </font>
+                          <HBox.margin>
+                              <Insets bottom="20.0" left="50.0" right="50.0" top="20.0" />
+                          </HBox.margin>
+                      </Button>
+                  </children>
+                  <BorderPane.margin>
+                      <Insets />
+                  </BorderPane.margin>
+              </HBox>
+          </bottom>
+         <right>
+            <TextArea fx:id="taSummary" maxHeight="250.0" prefWidth="400.0" wrapText="true" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets top="1300.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </TextArea>
+         </right>
+      </BorderPane>
+   </content>
+</ScrollPane>
