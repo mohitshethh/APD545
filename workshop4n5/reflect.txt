@@ -1,0 +1,36 @@
+/**********************************************
+ Workshop #4 and #5
+ Course: DSA545
+ Last Name: Sheth
+ First Name:Mohit
+ ID:114498223
+ Section: ZAA
+ This assignment represents my own work in accordance with Seneca Academic Policy.
+ Signature
+ Date:16/11/2024
+ **********************************************/
+
+
+Reflection: Workshop #4 & #5
+
+During the development of this inventory management application, I explored the possibility of using Property types (e.g., SimpleStringProperty) instead of primitive data types like String or int. Below are my observations regarding the potential benefits and usability of Property types:
+
+Benefits of Using Property Types:
+
+Automatic Change Notifications: Using Property types allows for automatic property change listeners to be set up. This is particularly useful in JavaFX applications for maintaining a seamless and responsive user interface. For example, when data changes in the model, the UI can automatically reflect those changes without additional coding.
+
+Binding Capabilities: Property types support data binding, which simplifies the synchronization between the model and the view. This can reduce boilerplate code and improve maintainability.
+
+Ease of Integration with JavaFX Controls: Many JavaFX UI controls (e.g., TextField, TableView) are designed to work directly with Property types. Using these can enhance compatibility and streamline the development process.
+
+Drawbacks or Considerations:
+
+Complexity: Property types introduce additional complexity compared to using primitive data types. This can increase the learning curve, especially for beginners.
+
+Memory Usage: Property types typically use more memory than their primitive counterparts. This might be a consideration in applications where performance and resource usage are critical.
+
+Usefulness in This Application:
+
+In this workshop, using Property types would have been particularly useful in the context of updating and managing the GUI. For example, implementing data binding between inventory values or product details and their respective input fields would have made the application more dynamic and reduced manual updates. However, given the scope of the assignment and the focus on understanding core Java concepts, using primitive types ensured simplicity and directness in coding.
+
+Overall, while Property types offer several advanced features that align well with JavaFX's architecture, their use depends on the project's complexity and requirements. For this application, primitive types were sufficient to meet the specified objectives.

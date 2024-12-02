@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mohit.workshop4n5.controller.AddProductController">
+        <center>
+            <VBox alignment="CENTER" spacing="10" style="-fx-padding: 20;">
+                 <TextField fx:id="searchField" onAction="#handleSearchPart" promptText="Search by Part ID or Name" />
+
+                       <TableView fx:id="partsTable" prefHeight="150">
+                     <columns>
+                         <TableColumn fx:id="partIdColumn" text="Part ID" />
+                         <TableColumn fx:id="partNameColumn" text="Part Name" />
+                         <TableColumn fx:id="partStockColumn" text="Inventory Level" />
+                         <TableColumn fx:id="partPriceColumn" text="Price/Cost per Unit" />
+                     </columns>
+                 </TableView>
+                 <Button fx:id="addButton" onAction="#handleAddButtonClick" text="Add" />
+                 <TableView fx:id="associatedPartsTable" prefHeight="150">
+                     <columns>
+                         <TableColumn fx:id="associatedPartIdColumn" text="Part ID" />
+                         <TableColumn fx:id="associatedPartNameColumn" text="Part Name" />
+                         <TableColumn fx:id="associatedPartStockColumn" text="Inventory Level" />
+                         <TableColumn fx:id="associatedPartPriceColumn" text="Price/Cost per Unit" />
+                     </columns>
+            <VBox.margin>
+               <Insets />
+            </VBox.margin>
+                 </TableView>
+                 <Button fx:id="removeButton" onAction="#handleRemoveAssociatedPartButtonClick" text="Remove Associated Part" />
+
+                <!-- Buttons -->
+                <HBox alignment="CENTER" spacing="10">
+                    <Button fx:id="saveButton" onAction="#handleSaveButtonClick" text="Save" />
+                    <Button fx:id="cancelButton" onAction="#handleCancelButtonClick" text="Cancel">
+               <HBox.margin>
+                  <Insets left="40.0" />
+               </HBox.margin></Button>
+            <VBox.margin>
+               <Insets bottom="30.0" />
+            </VBox.margin>
+                </HBox>
+            </VBox>
+        </center>
+   <top>
+             <Label style="-fx-font-size: 16; -fx-font-weight: bold;" text="Add Product" BorderPane.alignment="TOP_LEFT">
+         <BorderPane.margin>
+            <Insets bottom="10.0" left="30.0" right="10.0" top="40.0" />
+         </BorderPane.margin>
+      </Label>
+   </top>
+   <left>
+
+             <!-- Form Fields -->
+             <GridPane hgap="10" vgap="10" BorderPane.alignment="CENTER">
+                 <Label text="ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+                 <TextField fx:id="idField" editable="false" text="Auto Gen - Disabled" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+                 <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+                 <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+                 <Label text="Inv" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+                 <TextField fx:id="inventoryLevelField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+                 <Label text="Price" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+                 <TextField fx:id="priceCostField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+                 <Label text="Max" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+                 <TextField fx:id="maxField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+                 <Label text="Min" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+                 <TextField fx:id="minField" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+         <columnConstraints>
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+            <ColumnConstraints />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+            <RowConstraints />
+         </rowConstraints>
+         <BorderPane.margin>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </BorderPane.margin>
+             </GridPane>
+   </left>
+    </BorderPane>
