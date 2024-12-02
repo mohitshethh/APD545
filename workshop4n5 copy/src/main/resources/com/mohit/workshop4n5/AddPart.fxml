@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox alignment="CENTER" prefHeight="500.0" prefWidth="550.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.mohit.workshop4n5.controller.AddPartController">
+
+<!-- Title and Radio Buttons -->
+<HBox alignment="CENTER_LEFT" spacing="10">
+    <Label style="-fx-font-weight: bold; -fx-font-size: 16px;" text="Add Part" />
+    <HBox>
+        <RadioButton fx:id="inHouseRadioButton" text="In-House">
+            <HBox.margin>
+               <Insets left="20.0" right="20.0" />
+            </HBox.margin>
+            <toggleGroup>
+               <ToggleGroup fx:id="partTypeGroup" />
+            </toggleGroup></RadioButton>
+        <RadioButton fx:id="outsourcedRadioButton" text="Outsourced" toggleGroup="$partTypeGroup" />
+    </HBox>
+      <VBox.margin>
+         <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+      </VBox.margin>
+</HBox>
+
+<!-- Form Fields -->
+<GridPane>
+    <columnConstraints>
+        <ColumnConstraints minWidth="80.0" />
+        <ColumnConstraints />
+         <ColumnConstraints />
+         <ColumnConstraints />
+    </columnConstraints>
+
+    <!-- ID Field -->
+    <Label text="ID" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+    <TextField fx:id="idField" editable="false" text="Auto Gen - Disabled" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+
+    <!-- Name Field -->
+    <Label text="Name" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+    <TextField fx:id="nameField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+
+    <!-- Inventory Field -->
+    <Label text="Inv" GridPane.columnIndex="0" GridPane.rowIndex="2" />
+    <TextField fx:id="inventoryLevelField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+
+    <!-- Price/Cost Field -->
+    <Label text="Price/Cost" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+    <TextField fx:id="priceCostField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+
+    <!-- Max and Min Fields -->
+    <Label text="Max" GridPane.columnIndex="0" GridPane.rowIndex="4" />
+    <TextField fx:id="maxField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+
+    <Label text="Min" GridPane.columnIndex="2" GridPane.rowIndex="4">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding></Label>
+    <TextField fx:id="minField" GridPane.columnIndex="3" GridPane.rowIndex="4" />
+
+    <!-- Machine ID / Company Name Field -->
+    <Label text="MachineID" GridPane.columnIndex="0" GridPane.rowIndex="5" />
+    <TextField fx:id="companyMachineIdField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+      <rowConstraints>
+         <RowConstraints minHeight="30.0" />
+         <RowConstraints minHeight="30.0" />
+         <RowConstraints minHeight="30.0" />
+         <RowConstraints minHeight="30.0" />
+         <RowConstraints minHeight="30.0" />
+         <RowConstraints minHeight="30.0" />
+      </rowConstraints>
+      <VBox.margin>
+         <Insets bottom="20.0" left="40.0" right="20.0" top="20.0" />
+      </VBox.margin>
+</GridPane>
+
+<!-- Save and Cancel Buttons -->
+<HBox alignment="CENTER">
+    <Button fx:id="saveButton" onAction="#handleSaveButtonClick" text="Save" />
+    <Button fx:id="cancelButton" onAction="#handleCancelButtonClick" text="Cancel">
+         <HBox.margin>
+            <Insets left="20.0" />
+         </HBox.margin></Button>
+      <VBox.margin>
+         <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+      </VBox.margin>
+</HBox>
+</VBox>
